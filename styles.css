@@ -459,14 +459,20 @@ header nav li a:hover {
   width: 90px;
   height: 90px;
   filter: drop-shadow(0 2px 3px rgba(0,0,0,0.3));
+  margin-left: -20px; /* Adjust spacing */
 }
 
 /* This makes the second column (the text) align to the left */
 .weather-content > div {
   text-align: left;
   text-transform: capitalize;
-  margin-left: 15px;
 }
+
+.weather-info {
+  margin: 0;
+}
+
+
 
 .weather-temp {
   font-size: 2rem;
