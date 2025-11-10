@@ -596,8 +596,8 @@ button:focus-visible,
   header {
     flex-direction: column;
     /* Stack logo and nav */
-    align-items: flex-start;
-    /* Align logo to the left */
+    align-items: center;
+    /* Align them to the center */
     gap: 15px;
     /* Adds space between logo and nav */
   }
