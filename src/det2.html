@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anıtkabir - Ankara Mola</title>
+  <link rel="icon" href="img/favicon.png" type="image/png">
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://googleapis.com">
   <link rel="preconnect" href="https://gstatic.com" crossorigin>
@@ -27,7 +28,24 @@
     <main>
       <h2>Anıtkabir (Mausoleo de Atatürk)</h2>
 
-      <img src="img/anitkabir.jpg" alt="Vista exterior de Anıtkabir" class="img-featured">
+      <picture class="art-direction-image">
+      
+      <source 
+        media="(min-width: 1024px)" 
+        srcset="./img/anitkabir.jpg?as=webp&width=1200&height=500" 
+        type="image/webp">
+
+      <source 
+        media="(min-width: 600px)" 
+        srcset="./img/anitkabir.jpg?as=webp&width=800&height=400" 
+        type="image/webp">
+
+      <img 
+        src="./img/anitkabir.jpg?width=500&height=500&as=webp" 
+        alt="Anıtkabir, el mausoleo de Atatürk" 
+        class="responsive-detail-img">
+        
+      </picture>
 
       <p>Anıtkabir ("tumba conmemorativa") es el mausoleo de Mustafa Kemal Atatürk, el líder de la Guerra de
         Independencia Turca y el fundador y primer presidente de la República de Turquía. Es un símbolo nacional de
@@ -42,9 +60,9 @@
         nacimiento de la república moderna.</p>
 
       <div class="image-gallery">
-        <img src="img/anitkabir_2.jpg" alt="Área ceremonial de Anıtkabir" class="clickable-image">
-        <img src="img/anitkabir_3.jpg" alt="Muros exteriores del mausoleo" class="clickable-image">
-        <img src="img/anitkabir_4.jpg" alt="Vista nocturna de Anıtkabir desde lejos" class="clickable-image">
+        <img src="img/anitkabir_2.jpg?as=webp" alt="Área ceremonial de Anıtkabir" class="clickable-image">
+        <img src="img/anitkabir_3.jpg?as=webp" alt="Muros exteriores del mausoleo" class="clickable-image">
+        <img src="img/anitkabir_4.jpg?as=webp" alt="Vista nocturna de Anıtkabir desde lejos" class="clickable-image">
       </div>
 
       <div class="video-container">

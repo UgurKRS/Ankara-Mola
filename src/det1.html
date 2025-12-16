@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Castillo - Ankara Mola</title>
+  <link rel="icon" href="img/favicon.png" type="image/png">
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://googleapis.com">
   <link rel="preconnect" href="https://gstatic.com" crossorigin>
@@ -25,7 +26,24 @@
     <main>
       <h2>El Castillo de Ankara (Ankara Kalesi)</h2>
 
-      <img src="img/kale.jpg" alt="Vista panorámica del Castillo de Ankara" class="img-featured">
+      <picture class="art-direction-image">
+      
+      <source 
+        media="(min-width: 1024px)" 
+        srcset="./img/kale.jpg?as=webp&width=1200&height=500" 
+        type="image/webp">
+
+      <source 
+        media="(min-width: 600px)" 
+        srcset="./img/kale.jpg?as=webp&width=800&height=400" 
+        type="image/webp">
+
+      <img 
+        src="./img/kale.jpg?width=500&height=500&as=webp" 
+        alt="El Castillo de Ankara" 
+        class="responsive-detail-img">
+        
+      </picture>
 
       <p>El Castillo de Ankara es una fortificación histórica que domina el casco antiguo. Sus orígenes se remontan a la
         época romana, aunque ha sido reconstruido y modificado por bizantinos, selyúcidas y otomanos. Es uno de los
@@ -39,9 +57,9 @@
         moderna extendiéndose por el valle, contrastando fuertemente con la arquitectura histórica a tus pies.</p>
 
       <div class="image-gallery">
-        <img src="img/kale_2.jpg" alt="Murallas del castillo" class="clickable-image">
-        <img src="img/kale_3.jpg" alt="Torre del castillo" class="clickable-image">
-        <img src="img/kale_4.jpg" alt="Arte de vidrio del interior del castillo" class="clickable-image">
+        <img src="img/kale_2.jpg?as=webp" alt="Murallas del castillo" class="clickable-image">
+        <img src="img/kale_3.jpg?as=webp" alt="Torre del castillo" class="clickable-image">
+        <img src="img/kale_4.jpg?as=webp" alt="Arte de vidrio del interior del castillo" class="clickable-image">
       </div>
 
       <div class="video-container">
