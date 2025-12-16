@@ -128,6 +128,7 @@ header nav li a:hover {
   height: 1px;
   overflow: hidden;
 }
+
 .skip-link:focus,
 .skip-link:active {
   left: 10px;
@@ -315,6 +316,9 @@ img {
   flex-shrink: 0;
   /* prevent image shrinking */
   border-radius: 8px;
+  /* subtle drop shadow to improve contrast for all weather icons */
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.35));
+  -webkit-filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.35));
 }
 
 /* This makes the second column (the text) align to the left */
@@ -702,12 +706,17 @@ button:focus-visible,
     transform: translateY(0);
     opacity: 0;
   }
+
   50% {
-    opacity: 0.8; /* Se hace visible a mitad de camino */
+    opacity: 0.8;
+    /* Se hace visible a mitad de camino */
   }
+
   100% {
-    transform: translateY(-15px); /* Sube hacia arriba */
-    opacity: 0; /* Desaparece */
+    transform: translateY(-15px);
+    /* Sube hacia arriba */
+    opacity: 0;
+    /* Desaparece */
   }
 }
 
@@ -718,12 +727,14 @@ button:focus-visible,
 
 /* Retrasamos una de las líneas para que no se muevan a la vez */
 .steam-2 {
-  animation-delay: 1s; /* Empieza 1 segundo más tarde */
+  animation-delay: 1s;
+  /* Empieza 1 segundo más tarde */
 }
 
 /* Extra: Efecto Hover interactivo en el vaso */
 .turkish-tea:hover {
-  transform: scale(1.1); /* Crece un poco al pasar el ratón */
+  transform: scale(1.1);
+  /* Crece un poco al pasar el ratón */
   transition: transform 0.3s ease;
   cursor: default;
 }
@@ -734,42 +745,56 @@ button:focus-visible,
 .hero-clipped-image-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 1.5rem; /* Espacio entre la imagen y el título */
+  margin-bottom: 1.5rem;
+  /* Espacio entre la imagen y el título */
 }
 
 /* La imagen recortada */
 .hero-clipped-image {
-  display: block; /* Evita saltos y asegura que clip-path y object-fit se comporten bien */
+  display: block;
+  /* Evita saltos y asegura que clip-path y object-fit se comporten bien */
   width: 100%;
-  max-width: 220px; /* Tamaño controlado para que no quite protagonismo al texto */
+  max-width: 220px;
+  /* Tamaño controlado para que no quite protagonismo al texto */
   height: auto;
-  object-fit: cover; /* Asegura que la imagen llene el espacio sin deformarse */
+  object-fit: cover;
+  /* Asegura que la imagen llene el espacio sin deformarse */
 
   /* FORMA INICIAL */
   /* Estos porcentajes definen los vértices del polígono */
-  -webkit-clip-path: polygon(
-    50% 0%,    /* Punta superior central */
-    100% 20%,  /* Esquina superior derecha */
-    100% 60%,  /* Lado derecho abajo */
-    50% 100%,  /* Punta inferior central */
-    0% 60%,    /* Lado izquierdo abajo */
-    0% 20%     /* Esquina superior izquierda */
-  );
-  clip-path: polygon(
-    50% 0%,    /* Punta superior central */
-    100% 20%,  /* Esquina superior derecha */
-    100% 60%,  /* Lado derecho abajo */
-    50% 100%,  /* Punta inferior central */
-    0% 60%,    /* Lado izquierdo abajo */
-    0% 20%     /* Esquina superior izquierda */
-  );
+  -webkit-clip-path: polygon(50% 0%,
+      /* Punta superior central */
+      100% 20%,
+      /* Esquina superior derecha */
+      100% 60%,
+      /* Lado derecho abajo */
+      50% 100%,
+      /* Punta inferior central */
+      0% 60%,
+      /* Lado izquierdo abajo */
+      0% 20%
+      /* Esquina superior izquierda */
+    );
+  clip-path: polygon(50% 0%,
+      /* Punta superior central */
+      100% 20%,
+      /* Esquina superior derecha */
+      100% 60%,
+      /* Lado derecho abajo */
+      50% 100%,
+      /* Punta inferior central */
+      0% 60%,
+      /* Lado izquierdo abajo */
+      0% 20%
+      /* Esquina superior izquierda */
+    );
 
 
 
   /* Transición más específica para mejor rendimiento */
   transition: clip-path 0.45s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.45s cubic-bezier(0.25, 0.8, 0.25, 1);
   will-change: clip-path, transform;
-  cursor: default; 
+  cursor: default;
 }
 
 /* INTERACCIÓN HOVER */
@@ -779,7 +804,7 @@ button:focus-visible,
   /* Forma FINAL */
   -webkit-clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-  
+
   /* Un pequeño efecto extra de zoom y rotación */
   transform: scale(1.08) rotate(3deg);
 }
@@ -794,11 +819,12 @@ button:focus-visible,
 .responsive-detail-img {
   width: 100%;
   height: auto;
-  border-radius: 8px; /* Aesthetic touch */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  
+  border-radius: 8px;
+  /* Aesthetic touch */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
   /* It doesn't stretch if CSS changes dimensions */
-  object-fit: cover; 
+  object-fit: cover;
 }
 
 /* Styles for Resolution Switching Section */
@@ -809,8 +835,11 @@ button:focus-visible,
 
 /* Limits height and crops excess */
 .responsive-gallery-image {
-  width: 100%;        /* Fills the container (up to 800px) */
-  height: 300px;      /* Fixed height */
-  object-fit: cover;  /* Crops the top/bottom so image isn't squashed */
+  width: 100%;
+  /* Fills the container (up to 800px) */
+  height: 300px;
+  /* Fixed height */
+  object-fit: cover;
+  /* Crops the top/bottom so image isn't squashed */
   border-radius: 12px;
 }
