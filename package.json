@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "Una guía de viaje para Ankara.",
   "author": "Ugur Karse <ugurkrs@uoc.edu>",
-  "source": "index.html",
+  "source": "src/index.html",
   "scripts": {
-    "parcel:dev": "parcel index.html",
-    "parcel:build": "parcel build index.html",
+    "parcel:dev": "parcel src/index.html",
+    "parcel:build": "parcel build src/index.html",
     "clean": "rimraf dist .parcel-cache",
     "start": "npm-run-all clean parcel:dev",
     "build": "npm-run-all clean parcel:build"
@@ -30,4 +30,10 @@
   "dependencies": {
     "basiclightbox": "^5.0.4"
   }
+  ,
+  "browserslist": [
+    "last 2 versions",
+    "not dead",
+    "> 0.5%"
+  ]
 }

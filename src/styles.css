@@ -94,7 +94,7 @@ header nav li+li {
 
 .logo-tagline {
   font-size: 14px;
-  color: #555;
+  color: #4e4e4e;
   display: block;
   /* Puts it on its own line */
 }
@@ -429,8 +429,7 @@ img {
 }
 
 .site-footer .logo-tagline {
-  color: #aaa;
-  /* Keep tagline light gray */
+  color: #f1f1f1;
 }
 
 .footer-nav h4 {
