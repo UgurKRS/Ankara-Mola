@@ -772,7 +772,7 @@ button:focus-visible,
   cursor: default; 
 }
 
-/* INTERACCIÓN HOVER: Cambiar la forma */
+/* INTERACCIÓN HOVER */
 /* Hacemos que el hover del contenedor active la animación también, para mayor área interactiva */
 .hero-clipped-image-container:hover .hero-clipped-image,
 .hero-clipped-image:hover {
@@ -807,7 +807,7 @@ button:focus-visible,
   margin: 3rem auto;
 }
 
-/* Image: Limits height and crops excess */
+/* Limits height and crops excess */
 .responsive-gallery-image {
   width: 100%;        /* Fills the container (up to 800px) */
   height: 300px;      /* Fixed height */
