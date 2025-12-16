@@ -119,6 +119,29 @@ header nav li a:hover {
   /* Red text on hover */
 }
 
+/* Skip link: visually hidden but visible on focus */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip-link:focus,
+.skip-link:active {
+  left: 10px;
+  top: 10px;
+  width: auto;
+  height: auto;
+  padding: 0.5rem 0.75rem;
+  background: #000;
+  color: #fff;
+  z-index: 9999;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
 
 /* ===========================================
    4. HERO SECTION
@@ -288,7 +311,6 @@ img {
 .weather-content img {
   width: 90px;
   height: 90px;
-  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.3));
   margin-left: -20px;
   flex-shrink: 0;
   /* prevent image shrinking */
@@ -664,4 +686,131 @@ button:focus-visible,
     /* Vertically center the weather widget */
   }
 
+}
+
+
+/* --- Footer Animation --- */
+.footer-icon-container {
+  display: inline-block;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+/* Definimos la animación del vapor */
+@keyframes riseAndFade {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8; /* Se hace visible a mitad de camino */
+  }
+  100% {
+    transform: translateY(-15px); /* Sube hacia arriba */
+    opacity: 0; /* Desaparece */
+  }
+}
+
+/* Aplicamos la animación a las líneas de vapor */
+.steam {
+  animation: riseAndFade 2s infinite ease-out;
+}
+
+/* Retrasamos una de las líneas para que no se muevan a la vez */
+.steam-2 {
+  animation-delay: 1s; /* Empieza 1 segundo más tarde */
+}
+
+/* Extra: Efecto Hover interactivo en el vaso */
+.turkish-tea:hover {
+  transform: scale(1.1); /* Crece un poco al pasar el ratón */
+  transition: transform 0.3s ease;
+  cursor: default;
+}
+
+/* --- CSS para el Clip-Path del Hero --- */
+
+/* Contenedor para centrar y dar espacio antes del título */
+.hero-clipped-image-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem; /* Espacio entre la imagen y el título */
+}
+
+/* La imagen recortada */
+.hero-clipped-image {
+  display: block; /* Evita saltos y asegura que clip-path y object-fit se comporten bien */
+  width: 100%;
+  max-width: 220px; /* Tamaño controlado para que no quite protagonismo al texto */
+  height: auto;
+  object-fit: cover; /* Asegura que la imagen llene el espacio sin deformarse */
+
+  /* FORMA INICIAL */
+  /* Estos porcentajes definen los vértices del polígono */
+  -webkit-clip-path: polygon(
+    50% 0%,    /* Punta superior central */
+    100% 20%,  /* Esquina superior derecha */
+    100% 60%,  /* Lado derecho abajo */
+    50% 100%,  /* Punta inferior central */
+    0% 60%,    /* Lado izquierdo abajo */
+    0% 20%     /* Esquina superior izquierda */
+  );
+  clip-path: polygon(
+    50% 0%,    /* Punta superior central */
+    100% 20%,  /* Esquina superior derecha */
+    100% 60%,  /* Lado derecho abajo */
+    50% 100%,  /* Punta inferior central */
+    0% 60%,    /* Lado izquierdo abajo */
+    0% 20%     /* Esquina superior izquierda */
+  );
+
+
+
+  /* Transición más específica para mejor rendimiento */
+  transition: clip-path 0.45s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.45s cubic-bezier(0.25, 0.8, 0.25, 1);
+  will-change: clip-path, transform;
+  cursor: default; 
+}
+
+/* INTERACCIÓN HOVER: Cambiar la forma */
+/* Hacemos que el hover del contenedor active la animación también, para mayor área interactiva */
+.hero-clipped-image-container:hover .hero-clipped-image,
+.hero-clipped-image:hover {
+  /* Forma FINAL */
+  -webkit-clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  
+  /* Un pequeño efecto extra de zoom y rotación */
+  transform: scale(1.08) rotate(3deg);
+}
+
+/* Styles for the Detail Page */
+
+.detail-hero {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.responsive-detail-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px; /* Aesthetic touch */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  
+  /* It doesn't stretch if CSS changes dimensions */
+  object-fit: cover; 
+}
+
+/* Styles for Resolution Switching Section */
+.resolution-switching-demo {
+  text-align: center;
+  margin: 3rem auto;
+}
+
+/* Image: Limits height and crops excess */
+.responsive-gallery-image {
+  width: 100%;        /* Fills the container (up to 800px) */
+  height: 300px;      /* Fixed height */
+  object-fit: cover;  /* Crops the top/bottom so image isn't squashed */
+  border-radius: 12px;
 }
