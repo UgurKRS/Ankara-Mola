@@ -20,7 +20,7 @@
     <include src="partials/header.html"></include>
     <main id="main">
       <section class="hero">
-        <img src="img/ankara_skyline.jpg?as=webp" alt="Horizonte de Ankara al atardecer" class="hero-image">
+        <img src="img/ankara_skyline.jpg?as=webp" alt="Horizonte de Ankara al atardecer" class="hero-image" decoding="async">
         <div class="hero-text">
           <h1>Descubre Ankara</h1>
           <p>La vibrante capital de Turquía, donde la historia antigua se encuentra con la modernidad.</p>
@@ -30,7 +30,7 @@
       <section class="welcome-text">
         <div class="hero-clipped-image-container">
           <img src="./img/deer_sculpture.jpg?as=webp&width=400" alt="Escultura del Ciervo Hitita en la plaza Sıhhiye"
-            class="hero-clipped-image">
+            class="hero-clipped-image" loading="lazy" decoding="async">
         </div>
         <h2>Bienvenidos al Corazón de Anatolia</h2>
         <p>Esta web es un proyecto dedicado a explorar la fascinante ciudad de Ankara, una capital llena de contrastes.
@@ -70,7 +70,7 @@
     <include src="partials/footer.html"></include>
 
   </div>
-  <script src="app.js" type="module"></script>
+  <script src="app.js" type="module" defer></script>
 
 </body>
 

@@ -36,7 +36,7 @@
         <source media="(min-width: 600px)" srcset="./img/anitkabir.jpg?as=webp&width=800&height=400" type="image/webp">
 
         <img src="./img/anitkabir.jpg?width=500&height=500&as=webp" alt="Anıtkabir, el mausoleo de Atatürk"
-          class="responsive-detail-img">
+          class="responsive-detail-img" decoding="async">
 
       </picture>
 
@@ -53,16 +53,16 @@
         nacimiento de la república moderna.</p>
 
       <div class="image-gallery">
-        <img src="img/anitkabir_2.jpg?as=webp" alt="Área ceremonial de Anıtkabir" class="clickable-image">
-        <img src="img/anitkabir_3.jpg?as=webp" alt="Muros exteriores del mausoleo" class="clickable-image">
-        <img src="img/anitkabir_4.jpg?as=webp" alt="Vista nocturna de Anıtkabir desde lejos" class="clickable-image">
+        <img src="img/anitkabir_2.jpg?as=webp&width=900" alt="Área ceremonial de Anıtkabir" class="clickable-image" loading="lazy" decoding="async">
+        <img src="img/anitkabir_3.jpg?as=webp&width=900" alt="Muros exteriores del mausoleo" class="clickable-image" loading="lazy" decoding="async">
+        <img src="img/anitkabir_4.jpg?as=webp&width=900" alt="Vista nocturna de Anıtkabir desde lejos" class="clickable-image" loading="lazy" decoding="async">
       </div>
 
       <div class="video-container">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/UDqCVV_3lUk?si=B8g6406YNswS-fnI"
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
       </div>
 
     </main>
@@ -71,7 +71,7 @@
 
   </div>
 
-  <script src="app.js" type="module"></script>
+  <script src="app.js" type="module" defer></script>
 
 </body>
 
