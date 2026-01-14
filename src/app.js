@@ -30,6 +30,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // --- SCRIPT 4: YOUTUBE LAZY LOAD (FACADE) ---
+  // Replace YouTube thumbnail placeholders with real iframes on click
+  const ytPlaceholders = document.querySelectorAll('.youtube-facade');
+  
+  ytPlaceholders.forEach(placeholder => {
+    placeholder.addEventListener('click', () => {
+      const videoId = placeholder.dataset.videoId;
+      const iframe = document.createElement('iframe');
+      iframe.setAttribute('width', '560');
+      iframe.setAttribute('height', '315');
+      iframe.setAttribute('src', `https://www.youtube.com/embed/${videoId}?autoplay=1`);
+      iframe.setAttribute('title', 'YouTube video player');
+      iframe.setAttribute('frameborder', '0');
+      iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+      iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+      iframe.setAttribute('allowfullscreen', '');
+      
+      placeholder.replaceWith(iframe);
+    });
+  });
+
 }); // <-- End of the main startup script
 
 // --- WEATHER FUNCTION ---
